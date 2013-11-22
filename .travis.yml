@@ -11,4 +11,10 @@ install:
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-script: bin/test
+script: 
+  - bin/test
+  - if [ "$BROWSER" == "code-analysis" ]; then bin/flake8 setup.py; fi
+  - if [ "$BROWSER" == "code-analysis" ]; then bin/flake8 plonetesting; fi
+  - if [ "$BROWSER" == "code-analysis" ]; then bin/coverage run --source=plonetesting.content --omit=plonetesting/content/test\* bin/test; fi
+after_success:
+  - bin/coveralls
