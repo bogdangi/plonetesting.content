@@ -52,6 +52,14 @@ def test_suite():
 
         # -*- extra stuff goes here -*-
 
+        # Integration tests for Rally
+        ztc.ZopeDocFileSuite(
+            'Rally.txt',
+            package='plonetesting.content',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
         # Integration tests for Place
         ztc.ZopeDocFileSuite(
             'Place.txt',
