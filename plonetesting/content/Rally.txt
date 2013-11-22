@@ -33,7 +33,3 @@ Create a Rally object and put it in a folder
     >>> folder['test-title'].Title()
     'Test Title'
 
-Now, let's demonstrate a failing test::
-
-    >>> 2 == 3  # Deliberately failing test; fix me!
-    True

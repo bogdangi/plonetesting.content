@@ -28,9 +28,3 @@ In an integration test, here's some of the globals you have to work with::
 
     >>> app
     <Application at >
-
-Now, let's demonstrate a failing test::
-
-    >>> 1 == 2  # deliberately failing test; fix me!
-    True
-
