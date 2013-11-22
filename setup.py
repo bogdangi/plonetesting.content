@@ -29,6 +29,7 @@ setup(name='plonetesting.content',
           'plone.app.dexterity [grok, relations]',
           'plone.app.relationfield',
           'plone.namedfile [blobs]',
+          'collective.geo.behaviour',
           # -*- Extra requirements: -*-
       ],
       extras_require={

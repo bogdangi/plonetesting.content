@@ -9,23 +9,48 @@ Create a Place object and put it in a folder
     Create the object::
 
     >>> from zope.component import createObject
-    >>> container = createObject('plonetesting.content.place')
+    >>> place = createObject('plonetesting.content.place')
 
-    Verify it's type::
-
-    >>> container.portal_type
+    Verify it's type:: >>> place.portal_type
     'plonetesting.content.place'
 
     Give it a title::
 
-    >>> container.setTitle('Test Title')
-    >>> container.Title()
+    >>> place.setTitle('Test Title')
+    >>> place.Title()
     'Test Title'
+
+    Give it a description::
+
+    >>> place.setDescription('Test short description')
+    >>> place.Description()
+    'Test short description'
+
+Adapt place to :class:`IGeoreferenced <collective.geo.geographer.interfaces.IGeoreferenced>`
+
+    >>> from collective.geo.geographer.interfaces import IGeoreferenced
+    >>> geo = IGeoreferenced(place)
+
+Now set the location geometry to type *Point* and coordinates *105.08 degrees
+West, 40.59 degrees North* using
+:func:`setGeoInterface <IWritableGeoreference.setGeoInterface>`
+
+    >>> geo.setGeoInterface('Point', (-105.08, 40.59))
+
+A georeferenced object has *type* and *coordinates* attributes which should
+give us back what we put in.
+
+    >>> geo.type
+    'Point'
+    >>> tuple(['%.2f' % x for x in geo.coordinates])
+    ('-105.08', '40.59')
+    >>> geo.crs is None
+    True
 
     Put it in our base folder::
 
     >>> from plone.dexterity.utils import addContentToContainer
-    >>> cobj = addContentToContainer(folder, container)
+    >>> cobj = addContentToContainer(folder, place)
 
     >>> cobj
     <Place at /plone/Members/test_user_1_/test-title>
