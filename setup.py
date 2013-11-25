@@ -36,8 +36,7 @@ setup(name='plonetesting.content',
       ],
       extras_require={
           'test': [
-              'plone.app.testing[robot]>=4.2.2',
-              'plone.app.dexterity',
+              'plone.app.robotframework',
           ],
       },
       entry_points="""
@@ -48,7 +47,7 @@ setup(name='plonetesting.content',
       # The next two lines may be deleted after you no longer need
       # addcontent support from paster and before you distribute
       # your package.
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
+      # setup_requires=["PasteScript"],
+      # paster_plugins=["ZopeSkel"],
 
       )

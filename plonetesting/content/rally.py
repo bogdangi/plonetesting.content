@@ -1,18 +1,9 @@
 from five import grok
 
-from z3c.form import group, field
-from zope import schema
-from zope.interface import invariant, Invalid
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-
-from plone.dexterity.content import Container
-from plone.directives import dexterity, form
-from plone.app.textfield import RichText
-from plone.namedfile.field import NamedImage, NamedFile
-from plone.namedfile.field import NamedBlobImage, NamedBlobFile
+from plone.directives import form
 from plone.namedfile.interfaces import IImageScaleTraversable
 
+from plone.dexterity.content import Container
 from z3c.relationfield.schema import RelationList, RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
@@ -35,12 +26,13 @@ class IRally(form.Schema, IImageScaleTraversable):
     form.model("models/rally.xml")
 
     places = RelationList(
-            title=_(u'Places'),
-            default=[],
-            value_type=RelationChoice(title=_(u"Link to places"),
-                source=ObjPathSourceBinder(portal_type="plonetesting.content.place")),
-            required=False,
-            )
+        title=_(u'Places'),
+        default=[],
+        value_type=RelationChoice(
+            title=_(u"Link to places"),
+            source=ObjPathSourceBinder(
+                portal_type="plonetesting.content.place")),
+        required=False,)
 
 
 # Custom content-type class; objects created for this content type will
@@ -74,5 +66,6 @@ class SampleView(grok.View):
 
     # Add view methods here
 
- 
-sourceBinderForPlaces = ObjPathSourceBinder(portal_type="plonetesting.content.place")
+
+sourceBinderForPlaces = ObjPathSourceBinder(
+    portal_type="plonetesting.content.place")
