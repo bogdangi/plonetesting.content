@@ -13,8 +13,6 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
 script: 
   - bin/test
-  - if [ "$BROWSER" == "code-analysis" ]; then bin/flake8 setup.py; fi
-  - if [ "$BROWSER" == "code-analysis" ]; then bin/flake8 plonetesting; fi
-  - if [ "$BROWSER" == "code-analysis" ]; then bin/coverage run --source=plonetesting.content --omit=plonetesting/content/test\* bin/test; fi
 after_success:
+  - bin/coverage run --source=plonetesting.content bin/test
   - bin/coveralls
