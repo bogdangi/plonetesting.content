@@ -9,23 +9,30 @@ Create a Rally object and put it in a folder
     Create the object::
 
     >>> from zope.component import createObject
-    >>> container = createObject('plonetesting.content.rally')
+    >>> rally = createObject('plonetesting.content.rally')
 
     Verify it's type::
 
-    >>> container.portal_type
+    >>> rally.portal_type
     'plonetesting.content.rally'
 
     Give it a title::
 
-    >>> container.setTitle('Test Title')
-    >>> container.Title()
+    >>> rally.setTitle('Test Title')
+    >>> rally.Title()
     'Test Title'
+
+    Give it a description::
+
+    >>> rally.setDescription('Test short description')
+    >>> rally.Description()
+    'Test short description'
+
 
     Put it in our base folder::
 
     >>> from plone.dexterity.utils import addContentToContainer
-    >>> cobj = addContentToContainer(folder, container)
+    >>> cobj = addContentToContainer(folder, rally)
 
     >>> cobj
     <Rally at /plone/Members/test_user_1_/test-title>

@@ -1,10 +1,20 @@
 <?xml version="1.0" ?>
 <model xmlns="http://namespaces.plone.org/supermodel/schema"
-       xmlns:form="http://namespaces.plone.org/supermodel/form">
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="plonetesting.content">
     
     <schema>
 
-        <!-- field definitions -->
+        <field name="first_image" type="plone.namedfile.field.NamedImage">
+            <required>False</required> 
+            <title i18n:translate="">First image</title>
+        </field>
+        
+        <field name="second_image" type="plone.namedfile.field.NamedImage">
+            <required>False</required> 
+            <title i18n:translate="">Second image</title>
+        </field>
         
     </schema>
     

@@ -34,6 +34,14 @@ class IRally(form.Schema, IImageScaleTraversable):
 
     form.model("models/rally.xml")
 
+    places = RelationList(
+            title=_(u'Places'),
+            default=[],
+            value_type=RelationChoice(title=_(u"Link to places"),
+                source=ObjPathSourceBinder(portal_type="plonetesting.content.place")),
+            required=False,
+            )
+
 
 # Custom content-type class; objects created for this content type will
 # be instances of this class. Use this class to add content-type specific
@@ -65,3 +73,6 @@ class SampleView(grok.View):
     # grok.name('view')
 
     # Add view methods here
+
+ 
+sourceBinderForPlaces = ObjPathSourceBinder(portal_type="plonetesting.content.place")
