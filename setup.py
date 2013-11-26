@@ -28,7 +28,7 @@ setup(name='plonetesting.content',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.app.dexterity [grok, relations]',
+          'plone.app.dexterity [grok, relations]>=2.0.7',  # has a fix for INameFromFilename
           'plone.app.relationfield',
           'plone.namedfile [blobs]',
           'collective.geo.behaviour',
@@ -39,6 +39,7 @@ setup(name='plonetesting.content',
       extras_require={
           'test': [
               'plone.app.robotframework',
+              'plone.app.testing[robot]',
           ],
       },
       entry_points="""
