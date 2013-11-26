@@ -53,7 +53,8 @@ class Renderer(base.Renderer):
     @property
     def available(self):
         # Show this portlet for logged in users only
-        return self.context.portal_type == 'plonetesting.content.rally'
+        return self.context.portal_type == 'plonetesting.content.rally' and \
+            self.context.places != []
 
 
 class AddForm(base.NullAddForm):
