@@ -1,0 +1,32 @@
+<registry>
+  <record name="collective.geo.settings.interfaces.IGeoFeatureStyle.display_properties" interface="collective.geo.settings.interfaces.IGeoFeatureStyle" field="display_properties">
+    <field type="plone.registry.field.List">
+      <default>
+        <element>Title</element>
+        <element>Description</element>
+      </default>
+      <description>Choose which properties of the georeferenced content will be displayed in the additional informations section of the balloon.</description>
+      <required>False</required>
+      <title>Balloon details</title>
+      <value_type type="plone.registry.field.Choice">
+        <vocabulary>displaypropertiesVocab</vocabulary>
+      </value_type>
+    </field>
+    <value/>
+  </record>
+  <record name="collective.geo.settings.interfaces.IGeoSettings.default_layers" interface="collective.geo.settings.interfaces.IGeoSettings" field="default_layers">
+    <field type="plone.registry.field.List">
+      <default/>
+      <description>Choose which layers will be activated on the map layout.</description>
+      <required>False</required>
+      <title>Default map layers</title>
+      <value_type type="plone.registry.field.Choice">
+        <title>Layers</title>
+        <vocabulary>maplayersVocab</vocabulary>
+      </value_type>
+    </field>
+    <value>
+      <element>google_map</element>
+    </value>
+  </record>
+</registry>

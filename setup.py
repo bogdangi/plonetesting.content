@@ -32,6 +32,8 @@ setup(name='plonetesting.content',
           'plone.app.relationfield',
           'plone.namedfile [blobs]',
           'collective.geo.behaviour',
+          'collective.geo.kml',
+          'collective.geo.bundle',
           # -*- Extra requirements: -*-
       ],
       extras_require={

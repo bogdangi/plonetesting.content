@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<portlets>
+
+ <!-- Portlet type registrations -->
+
+ <portlet
+   addview="plonetesting.content.PlacesMapPortlet"
+   title="Places map portlet"
+   description="Places map portlet"
+   />
+
+ <assignment name="place-map-portlet" category="content_type"
+     key="plonetesting.content.rally" manager="plone.rightcolumn"
+     type="plonetesting.content.PlacesMapPortlet" visible="True"/>
+
+</portlets>

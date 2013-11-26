@@ -1,4 +1,6 @@
 from five import grok
+from zope.component import queryMultiAdapter
+from collective.geo.kml.interfaces import IFeature
 
 from plone.directives import form
 from plone.namedfile.interfaces import IImageScaleTraversable
@@ -6,6 +8,7 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.dexterity.content import Container
 from z3c.relationfield.schema import RelationList, RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
+from collective.geo.kml.browser.kmldocument import KMLBaseDocument
 
 
 from plonetesting.content import MessageFactory as _
@@ -56,15 +59,17 @@ class Rally(Container):
 # of this type by uncommenting the grok.name line below or by
 # changing the view class name and template filename to View / view.pt.
 
-class SampleView(grok.View):
+class KMLRallyMap(KMLBaseDocument):
     """ sample view class """
 
-    grok.context(IRally)
-    grok.require('zope2.View')
-
-    # grok.name('view')
-
-    # Add view methods here
+    @property
+    def features(self):
+        for item in self.context.places:
+            feature = queryMultiAdapter(
+                (item.to_object, self.request), IFeature)
+            if not feature:
+                continue
+            yield feature
 
 
 sourceBinderForPlaces = ObjPathSourceBinder(

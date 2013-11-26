@@ -1,0 +1,12 @@
+<dl class="portlet portletPlaceMap"
+    i18n:domain="plonetesting.content">
+
+    <dd class="portletItem odd" tal:define="cgmap view/cgmap">
+    <metal:use use-macro="context/@@collectivegeo-macros/openlayers" />
+    <metal:use use-macro="context/@@collectivegeo-macros/map-widget"  />
+    <script type="text/javascript"
+        src="++resource++geo.kml.javascripts/kml_openlayers.js"
+        ></script>
+    </dd>
+
+</dl>

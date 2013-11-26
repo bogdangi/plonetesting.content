@@ -36,5 +36,29 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <plone:portlet
+      name="plonetesting.content.PlacesMapPortlet"
+      interface=".placesmapportlet.IPlacesMapPortlet"
+      assignment=".placesmapportlet.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".placesmapportlet.Renderer"
+      addview=".placesmapportlet.AddForm"
+      />
+
+  <browser:page
+      for="plonetesting.content.rally.IRally"
+      name="kml-document"
+      class=".rally.KMLRallyMap"
+      permission="zope2.View"
+      />
+
+  <adapter
+      for="zope.interface.Interface
+           zope.interface.Interface
+           plonetesting.content.rally.IRally
+           zope.interface.Interface"
+      factory="collective.geo.kml.browser.kmlopenlayersview.KMLMapLayers"
+      />
 
 </configure>
