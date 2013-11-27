@@ -1,5 +1,11 @@
-<dl class="portlet portletPlaceMap"
+<dl class="portlet portletPlacesMap"
     i18n:domain="plonetesting.content">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span i18n:translate="Place map portlet"></span>
+        <span class="portletTopRight"></span>
+    </dt>
 
     <dd class="portletItem odd" tal:define="cgmap view/cgmap">
     <metal:use use-macro="context/@@collectivegeo-macros/openlayers" />

@@ -44,15 +44,15 @@ class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('placesmapportlet.pt')
 
-    @property
     def cgmap(self):
+        # Set id for map widget to resolve conflicts
         mapwidget = MapWidget(self, self.request, self.context)
         mapwidget.mapid = 'rally-map-portlet'
         return mapwidget
 
     @property
     def available(self):
-        # Show this portlet for logged in users only
+        # Show this portlet for rally with places only
         return self.context.portal_type == 'plonetesting.content.rally' and \
             self.context.places != []
 

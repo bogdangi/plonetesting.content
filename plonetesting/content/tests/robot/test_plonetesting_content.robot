@@ -29,3 +29,4 @@ Test Plone testing content
     Add Place to  ${test-folder}  First test place  This is a first place  45.01 50.01
     Add Place to  ${test-folder}  Second test place  This is a second place  45 50
     Add Rally to  ${test-folder}  Rally  This is a rally
+    Add Place to Rally  first-test-place  rally

@@ -28,7 +28,6 @@ Create a Rally object and put it in a folder
     >>> rally.Description()
     'Test short description'
 
-
     Put it in our base folder::
 
     >>> from plone.dexterity.utils import addContentToContainer
@@ -40,3 +39,19 @@ Create a Rally object and put it in a folder
     >>> folder['test-title'].Title()
     'Test Title'
 
+    Added place to rally::
+
+    >>> place = createObject('plonetesting.content.place')
+    >>> place.setTitle('Place')
+    >>> place.setDescription('Place short description')
+    >>> from collective.geo.geographer.interfaces import IGeoreferenced
+    >>> geo = IGeoreferenced(place)
+    >>> geo.setGeoInterface('Point', (-105.08, 40.59))
+    >>> place = addContentToContainer(folder, place)
+    >>> from z3c.relationfield import RelationValue
+    >>> from zope.component import getUtility
+    >>> from zope.intid.interfaces import IIntIds
+    >>> intids = getUtility(IIntIds)
+    >>> rally.places = [RelationValue(intids.getId(place))]
+    >>> rally.places[0].to_object
+    <Place at /plone/Members/test_user_1_/place>

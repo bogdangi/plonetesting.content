@@ -100,8 +100,9 @@ class TestRenderer(TestCase):
                           assignment=placesmapportlet.Assignment())
         r = r.__of__(self.folder)
         r.update()
-        #output = r.render()
-        # TODO: Test output
+        output = r.render()
+        self.assertTrue('rally-map-portlet' in output)
+        self.assertFalse(r.available)
 
 
 def test_suite():

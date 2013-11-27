@@ -28,3 +28,36 @@ In an integration test, here's some of the globals you have to work with::
 
     >>> app
     <Application at >
+
+    Create the rally::
+
+    >>> folder.invokeFactory('plonetesting.content.rally', 'rally', title='Rally')
+    'rally'
+    >>> rally = folder.rally
+
+    Create the places::
+
+    >>> folder.invokeFactory('plonetesting.content.place', 'place-with-coordinates', title='Place with coordinates')
+    'place-with-coordinates'
+    >>> from collective.geo.geographer.interfaces import IGeoreferenced
+    >>> geo = IGeoreferenced(folder['place-with-coordinates'])
+    >>> geo.setGeoInterface('Point', (-105.08, 40.59))
+    >>> folder.invokeFactory('plonetesting.content.place', 'place-without-coordinates', title='Place without coordinates')
+    'place-without-coordinates'
+
+Test kml document view
+
+    >>> 'Place with coordinates' in rally.restrictedTraverse('kml-document')()
+    False
+    >>> from z3c.relationfield import RelationValue
+    >>> from zope.intid.interfaces import IIntIds
+    >>> from zope.component import getUtility, getMultiAdapter
+    >>> intids = getUtility(IIntIds)
+    >>> rally.places = [
+    ... RelationValue(intids.getId(folder['place-with-coordinates'])),
+    ... RelationValue(intids.getId(folder['place-without-coordinates'])),
+    ... ]
+    >>> 'Place with coordinates' in rally.restrictedTraverse('kml-document')()
+    True
+    >>> 'Place without coordinates' in rally.restrictedTraverse('kml-document')()
+    False

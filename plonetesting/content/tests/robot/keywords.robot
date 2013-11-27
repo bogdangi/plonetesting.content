@@ -48,3 +48,18 @@ Add Rally to
     Choose File  name=form.widgets.second_image  ${PATH_TO_TEST_FILES}/plone-logo.png
     Click Button  Save
     Page Should Contain  Item created
+    Page Should Not Contain Element  css=#rally-map-portlet
+
+
+Add Place to Rally
+    [Arguments]  ${Place}  ${Rally}
+
+    Go to  ${test-folder}/${Rally}
+    Click Link  Edit
+    Click Button  browse...
+    Click Link  css=#form-widgets-places-contenttree a[href$='acceptance-test-folder']
+    Click Link  css=#form-widgets-places-contenttree a[href$='${Place}']
+    Click Button  Add
+    Click Button  Save
+    Page Should Contain  Changes saved
+    Page Should Contain Element  css=#rally-map-portlet
