@@ -3,7 +3,7 @@
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-        <span i18n:translate="Place map portlet"></span>
+        <span i18n:translate="Rally map portlet"></span>
         <span class="portletTopRight"></span>
     </dt>
 

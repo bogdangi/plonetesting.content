@@ -31,7 +31,7 @@ class Assignment(base.Assignment):
         """This property is used to give the title of the portlet in the
         "manage portlets" screen.
         """
-        return _(u"Place map portlet")
+        return _(u"Rally map portlet")
 
 
 class Renderer(base.Renderer):
