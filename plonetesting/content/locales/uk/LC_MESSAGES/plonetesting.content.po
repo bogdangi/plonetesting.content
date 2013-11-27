@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"POT-Creation-Date: 2013-11-27 04:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Bogdan Girman <bogdan.girman@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: uk\n"
+"Language-Name: Ukrainian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plonetesting.content\n"
+
+#: ../models/rally.xml
+msgid "First image"
+msgstr "Перше фото"
+
+#: ../rally.py:29
+msgid "Link to places"
+msgstr "Вкажіть місця"
+
+#: ../profiles/default/types/plonetesting.content.place.xml
+msgid "Place"
+msgstr "Місце"
+
+#: ../profiles/default/types/plonetesting.content.place.xml
+msgid "Place for event"
+msgstr "Місце для події"
+
+#: ../placesmapportlet.pt:6
+#: ../placesmapportlet.py:34
+msgid "Place map portlet"
+msgstr "Портлет мапи для ралли"
+
+#: ../rally.py:26
+msgid "Places"
+msgstr "Місця"
+
+#: ../profiles/default/types/plonetesting.content.rally.xml
+msgid "Rally"
+msgstr "Ралли"
+
+#: ../profiles/default/types/plonetesting.content.rally.xml
+msgid "Rally event"
+msgstr "Подія ралли"
+
+#: ../models/rally.xml
+msgid "Second image"
+msgstr "Друге фото"
+

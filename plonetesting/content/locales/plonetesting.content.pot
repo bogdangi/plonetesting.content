@@ -1,0 +1,55 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# Bogdan Girman <bogdan.girman@gmail.com>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"POT-Creation-Date: 2013-11-27 04:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Bogdan Girman <bogdan.girman@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plonetesting.content\n"
+
+#: ../models/rally.xml
+msgid "First image"
+msgstr ""
+
+#: ../rally.py:29
+msgid "Link to places"
+msgstr ""
+
+#: ../profiles/default/types/plonetesting.content.place.xml
+msgid "Place"
+msgstr ""
+
+#: ../profiles/default/types/plonetesting.content.place.xml
+msgid "Place for event"
+msgstr ""
+
+#: ../placesmapportlet.pt:6
+#: ../placesmapportlet.py:34
+msgid "Place map portlet"
+msgstr ""
+
+#: ../rally.py:26
+msgid "Places"
+msgstr ""
+
+#: ../profiles/default/types/plonetesting.content.rally.xml
+msgid "Rally"
+msgstr ""
+
+#: ../profiles/default/types/plonetesting.content.rally.xml
+msgid "Rally event"
+msgstr ""
+
+#: ../models/rally.xml
+msgid "Second image"
+msgstr ""
+
